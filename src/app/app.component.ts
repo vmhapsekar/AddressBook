@@ -90,6 +90,9 @@ export class AppComponent {
     if (this.search) {
       this.search = false;
       this.addressBook = this.addressBookTemp;
+      this.firstNameSearch = '';
+      this.lastNameSearch = '';
+      this.departmentSearch = '';
     }
   }
 

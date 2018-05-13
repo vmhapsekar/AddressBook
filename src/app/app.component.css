@@ -7,12 +7,13 @@ table {
 .register th {
   text-align: center !important;
   border: none;
-  border-left: 3px solid #4f565e;
+  border-left: 1px solid #4f565e;
 }
 
 .register table {
   margin: 0 auto;
   width: 330px;
+  border: none;
 }
 
 .address-book {
@@ -21,6 +22,7 @@ table {
   width: 80%;
   height: 410px;
   overflow-y: auto;
+  border: 1px solid #dddddd;
 }
 
 .address-book table {

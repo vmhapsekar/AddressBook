@@ -8,7 +8,7 @@
       <th>Search Employee</th>
     </tr>
     <tr>
-      <td style="border-right: 3px solid #4f565e">
+      <td style="border-right: 1px solid #4f565e">
         <fieldset style="text-align:center">
           <table>
             <tr>
@@ -59,19 +59,20 @@
       </td>
     </tr>
   </table>
-  <h5 style="margin-top: 40px;">Total number of employees : {{count}}</h5>
+  <h5 style="margin-top: 40px;" *ngIf="!search">Total number of employees : {{count}}</h5>
+  <h5 style="margin-top: 40px;" *ngIf="search">Search results - number of employees : {{addressBook.length}}</h5>
   <div class="address-book">
     <table>
       <tr>
-        <th *ngFor='let header of addressBookHeaders'>{{header}}</th>
+        <th *ngFor='let header of addressBookHeaders' style="text-align: center;">{{header}}</th>
       </tr>
       <tr *ngFor="let employee of addressBook; let i = index">
         <td>{{employee.firstName}}</td>
         <td>{{employee.lastName}}</td>
         <td>{{employee.department}}</td>
         <td>{{employee.phoneNumber}}</td>
-        <td>
-          <button (click)="deleteEmployee(employee.id, i)">Delete</button>
+        <td style="text-align: center">
+          <button (click)="deleteEmployee(employee.id, i)" class="btn btn-primary">Delete</button>
         </td>
       </tr>
     </table>
