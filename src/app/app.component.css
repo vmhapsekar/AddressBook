@@ -1,15 +1,56 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 table {
+  margin: 0 auto;
+  width: 100%;
+}
+.register th {
+  text-align: center !important;
+  border: none;
+  border-left: 3px solid #4f565e;
+}
+
+.register table {
+  margin: 0 auto;
+  width: 330px;
+}
+
+.address-book {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80%;
+  height: 410px;
+  overflow-y: auto;
+}
+
+.address-book table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-td, th {
+.address-book td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {
+.address-book tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+.fields {
+  width: 2000px;
+}
+
+.float-left {
+  float: left;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.float-right {
+  float: right;
+  margin-right: 5px;
+  margin-top: 10px;
 }

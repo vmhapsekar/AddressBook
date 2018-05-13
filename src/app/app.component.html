@@ -2,47 +2,79 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <fieldset>
-    <legend>New Employee</legend>
-    <div>
-      <span>First Name : </span><span><input class="" type="text" [(ngModel)]="firstName"></span>
-    </div>
-    <div>
-      <span>Last Name : </span><span><input type="text" [(ngModel)]="lastName"></span>
-    </div>
-    <div>
-      <span>Department : </span><span><input type="text" [(ngModel)]="department"></span>
-    </div>
-    <div>
-      <span>Phone Number : </span><span><input type="text" [(ngModel)]="phoneNumber"></span>
-    </div>
-    <div><button (click) = "addNewEmployee()">Add</button></div>
-  </fieldset>
-  <fieldset>
-    <legend>Search:</legend>
-    <div>
-      <span>First Name : </span><span><input type="text" [(ngModel)]="firstNameSearch"></span>
-    </div>
-    <div>
-      <span>Last Name : </span><span><input type="text" [(ngModel)]="lastNameSearch"></span>
-    </div>
-    <div>
-      <span>Department : </span><span><input type="text" [(ngModel)]="departmentSearch"></span>
-    </div>
-    <div><button (click) = "searchEmployee()">Search</button><button (click) = "cancelSearch()">Cancel</button></div>
-  </fieldset>
-  <h3>Total number of employees : {{count}}</h3>
-  <table>
-    <tr>
-      <th *ngFor='let header of addressBookHeaders'>{{header}}</th>
+  <table class="register">
+    <tr style="margin-bottom: 30px;">
+      <th>New Employee</th>
+      <th>Search Employee</th>
     </tr>
-    <tr *ngFor="let employee of addressBook; let i = index">
-      <td>{{employee.firstName}}</td>
-      <td>{{employee.lastName}}</td>
-      <td>{{employee.department}}</td>
-      <td>{{employee.phoneNumber}}</td>
-      <td><button (click) = "deleteEmployee(employee.id, i)">Delete</button></td>
+    <tr>
+      <td style="border-right: 3px solid #4f565e">
+        <fieldset style="text-align:center">
+          <table>
+            <tr>
+              <td>First Name :</td>
+              <td><input type="text" [(ngModel)]="firstName" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Last Name :</td>
+              <td><input type="text" [(ngModel)]="lastName" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Department :</td>
+              <td><input type="text" [(ngModel)]="department" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Phone Number :</td>
+              <td><input type="text" [(ngModel)]="phoneNumber" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>
+                <button (click)="addNewEmployee()" class="btn btn-primary float-right">Add</button>
+              </td>
+              <td>
+                <button (click)="clearFields()" class="btn btn-primary float-left">Reset</button>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </td>
+      <td>
+        <fieldset>
+          <table>
+          <tr>
+            <td>First Name : </td><td><input type="text" [(ngModel)]="firstNameSearch" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Last Name : </td><td><input type="text" [(ngModel)]="lastNameSearch" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Department : </td><td><input type="text" [(ngModel)]="departmentSearch" class="form-control"></td>
+          </tr>
+          <tr>
+            <td><button (click)="searchEmployee()" class="btn btn-primary float-right">Search</button></td>
+            <td><button (click)="cancelSearch()" class="btn btn-primary float-left">Cancel Search</button></td>
+          </tr>
+          </table>
+        </fieldset>
+      </td>
     </tr>
   </table>
+  <h5 style="margin-top: 40px;">Total number of employees : {{count}}</h5>
+  <div class="address-book">
+    <table>
+      <tr>
+        <th *ngFor='let header of addressBookHeaders'>{{header}}</th>
+      </tr>
+      <tr *ngFor="let employee of addressBook; let i = index">
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.department}}</td>
+        <td>{{employee.phoneNumber}}</td>
+        <td>
+          <button (click)="deleteEmployee(employee.id, i)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 

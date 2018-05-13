@@ -111,4 +111,11 @@ export class AppComponent {
       }
     }
   }
+
+  clearFields() {
+    this.firstName = '';
+    this.lastName = '';
+    this.department = '';
+    this.phoneNumber = '';
+  }
 }
